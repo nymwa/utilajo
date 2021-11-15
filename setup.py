@@ -19,12 +19,14 @@ setuptools.setup(
                 'remove-identical = utilajo.preproc.remove_identical:remove_identical',
                 'renversi = utilajo.preproc.renversi:main',
                 'space-normalize = utilajo.preproc.space_normalize:main',
+                'unicode-normalize = utilajo.preproc.unicode_normalize:main',
                 'superspecimeni = utilajo.preproc.superspecimeni:main',
                 'tondi = utilajo.preproc.tondi:main',
                 'ambitondi = utilajo.preproc.ambitondi:main',
                 'preproc-iwslt = utilajo.preproc.iwslt:main',
                 'purigi = utilajo.preproc.purigi:main',
                 'malgrandigi = utilajo.preproc.malgrandigi:main',
+                'preproc-tatoeba = utilajo.preproc.tatoeba:main',
 
                 # preprocess de
                 'beta-to-eszett = utilajo.preproc.de.beta_to_eszett:main',

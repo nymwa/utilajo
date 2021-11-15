@@ -1,5 +1,15 @@
 import sys
 from argparse import ArgumentParser
+from utilajo.util.template import make_main
+
+def get_length(line):
+    return len(line.strip().split())
+
+
+def cond(args, x):
+    length = get_length(x)
+    return args.min_len <= length <= args.max_len
+
 
 def parse_args():
     parser = ArgumentParser()
@@ -8,34 +18,12 @@ def parse_args():
     return parser.parse_args()
 
 
-def get_length(line):
-    return len(line.strip().split())
+def tondi(args):
+    for x in sys.stdin:
+        x = x.strip()
+        if cond(args, x):
+            print(x)
 
 
-def cond(args, src, trg):
-    src_length = get_length(src)
-    if not (args.min_len <= src_length <= args.max_len):
-        return False
-
-    trg_length = get_length(trg)
-    if not (args.min_len <= trg_length <= args.max_len):
-        return False
-
-    return True
-
-
-def main():
-    args = parse_args()
-
-    try:
-        for line in sys.stdin:
-            line = line.rstrip('\n')
-            src, trg = line.split('\t')
-            if cond(args, src, trg):
-                line = '{}\t{}'.format(src, trg)
-                print(line)
-    except KeyboardInterrupt:
-        pass
-    except BrokenPipeError:
-        pass
+main = make_main(tondi, parse_args = parse_args)
 

@@ -5,6 +5,7 @@ setuptools.setup(
         version = '0.1.0',
         packages = setuptools.find_packages(),
         install_requires=[
+                'fasttext',
                 'tqdm',
                 'sentencepiece',
                 'pyyaml',
@@ -20,6 +21,10 @@ setuptools.setup(
                 'space-normalize = utilajo.preproc.space_normalize:main',
                 'superspecimeni = utilajo.preproc.superspecimeni:main',
                 'tondi = utilajo.preproc.tondi:main',
+                'ambitondi = utilajo.preproc.ambitondi:main',
+                'preproc-iwslt = utilajo.preproc.iwslt:main',
+                'purigi = utilajo.preproc.purigi:main',
+                'malgrandigi = utilajo.preproc.malgrandigi:main',
 
                 # preprocess de
                 'beta-to-eszett = utilajo.preproc.de.beta_to_eszett:main',
@@ -31,6 +36,8 @@ setuptools.setup(
                 # preprocess spacy
                 'en-tokenize = utilajo.preproc.spacy.tokenize:en',
                 'de-tokenize = utilajo.preproc.spacy.tokenize:de',
+                'fr-tokenize = utilajo.preproc.spacy.tokenize:fr',
+                'ja-tokenize = utilajo.preproc.spacy.tokenize:ja',
 
                 # postprocess
                 'indeksi = utilajo.postproc.indeksi:main',
@@ -51,8 +58,8 @@ setuptools.setup(
                 'm22src = utilajo.m22src:m2_to_src',
                 'm22trg = utilajo.m22trg:m2_to_trg',
 
-                # check-fairseq-vocab
-                'compare-vocab = utilajo.check_fairseq_vocab:main',
+                # compare-fairseq-vocab
+                'compare-vocab = utilajo.compare_fairseq_vocab:main',
 
                 # generate
                 '2yaml = utilajo.generate.conv_to_yaml:main',

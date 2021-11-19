@@ -27,6 +27,9 @@ setuptools.setup(
                 'purigi = utilajo.preproc.purigi:main',
                 'malgrandigi = utilajo.preproc.malgrandigi:main',
                 'preproc-tatoeba = utilajo.preproc.tatoeba:main',
+                'senliterigi = utilajo.preproc.senliterigi:main',
+                'ambisenliterigi = utilajo.preproc.ambisenliterigi:main',
+                'vicigi = utilajo.preproc.vicigi:main',
 
                 # preprocess de
                 'beta-to-eszett = utilajo.preproc.de.beta_to_eszett:main',
@@ -40,6 +43,7 @@ setuptools.setup(
                 'de-tokenize = utilajo.preproc.spacy.tokenize:de',
                 'fr-tokenize = utilajo.preproc.spacy.tokenize:fr',
                 'ja-tokenize = utilajo.preproc.spacy.tokenize:ja',
+                'zh-tokenize = utilajo.preproc.spacy.tokenize:zh',
 
                 # postprocess
                 'indeksi = utilajo.postproc.indeksi:main',
@@ -48,6 +52,7 @@ setuptools.setup(
                 'kuntrunki = utilajo.postproc.kuntrunki:main',
                 'nltk-detokenize = utilajo.postproc.nltk_detokenize:main',
                 'trunki = utilajo.postproc.trunki:main',
+                'remove-space = utilajo.postproc.remove_space:main',
 
                 # erg
                 'target-jsonize = utilajo.erg.target_jsonize:main',
@@ -83,5 +88,6 @@ setuptools.setup(
                 # stat
                 'char-stat = utilajo.stat.char:main',
                 'sent-stat = utilajo.stat.sent:main',
+                'unk-stat = utilajo.stat.unk:main',
                 ]},)
 

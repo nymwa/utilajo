@@ -39,3 +39,7 @@ def fr():
 def ja():
     tokenize('ja_core_news_sm')
 
+
+def zh():
+    tokenize('zh_core_web_sm')
+

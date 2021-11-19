@@ -2,7 +2,8 @@ import sys
 import re
 from utilajo.util.template import make_main
 
-p1 = re.compile(r'<url>|<talkid>|<keywords>')
+p1 = re.compile(r'|'.join(['</?{}[^>]*>'.format(x)
+    for x in ['doc', 'speaker', 'reviewer', 'translator', 'url', 'talkid', 'keywords']]))
 p2 = re.compile(r'<title>|</title>|<description>|</description>')
 
 

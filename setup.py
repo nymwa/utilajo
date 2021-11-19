@@ -65,6 +65,10 @@ setuptools.setup(
                 'm22src = utilajo.m22src:m2_to_src',
                 'm22trg = utilajo.m22trg:m2_to_trg',
 
+                # moses
+                'krampo-grandigi = utilajo.moses.krampo:grandigi_main',
+                'krampo-malgrandigi = utilajo.moses.krampo:malgrandigi_main',
+
                 # compare-fairseq-vocab
                 'compare-vocab = utilajo.compare_fairseq_vocab:main',
 

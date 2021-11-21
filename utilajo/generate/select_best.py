@@ -7,23 +7,11 @@ space = chr(0x2581)
 decoder = Decoder()
 
 
-def reverse_sent(x):
-    x = x.strip().split()[::-1]
-    x = ' '.join(x)
-    return x
-
-
-
-def replace_unk(sent, unk_token, unk_char):
-    sent = [unk_char if token == unk_token else token for token in sent]
-    return sent
-
-def remove_bpe(x):
-    x = x.strip()
-    x = x.split()
-    x = ''.join(x)
-    x = x.replace(space, ' ')
-    x = x.strip()
+def replace_unk(token, unk_token, unk_char):
+    if token == unk_token:
+        x = unk_char
+    else:
+        x = token
     return x
 
 
@@ -42,15 +30,19 @@ def sort_by_score(args, lst):
 
 def print_best(args, lst):
     x = lst[-1]['text']
+    x = x.strip()
+    x = x.split()
 
     if args.reverse:
-        x = reverse_sent(x)
+        x = x[::-1]
 
     if not args.retain_unk:
-        x = replace_unk(x, args.unk_token, args.unk_char)
+        x = [replace_unk(token, args.unk_token, args.unk_char) for token in x]
 
+    x = ''.join(x)
     if not args.retain_whitespace:
-        x = remove_bpe(x)
+        x = x.replace(space, ' ')
+        x = x.strip()
 
     if not args.retain_normalized:
         x = decoder(x)

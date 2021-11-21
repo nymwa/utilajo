@@ -13,6 +13,11 @@ def reverse_sent(x):
     return x
 
 
+
+def replace_unk(sent, unk_token, unk_char):
+    sent = [unk_char if token == unk_token else token for token in sent]
+    return sent
+
 def remove_bpe(x):
     x = x.strip()
     x = x.split()
@@ -41,6 +46,9 @@ def print_best(args, lst):
     if args.reverse:
         x = reverse_sent(x)
 
+    if not args.retain_unk:
+        x = replace_unk(x, args.unk_token, args.unk_char)
+
     if not args.retain_whitespace:
         x = remove_bpe(x)
 
@@ -61,6 +69,9 @@ def parse_args():
     parser.add_argument('-l', type = float, default = None)
     parser.add_argument('--r2l', action = 'store_true')
     parser.add_argument('--mlm', action = 'store_true')
+    parser.add_argument('-u', '--unk-char', default = '⁇')
+    parser.add_argument('--unk-token', default = '<unk>')
+    parser.add_argument('--retain-unk', action = 'store_true')
     parser.add_argument('--retain-whitespace', action = 'store_true')
     parser.add_argument('--retain-normalized', action = 'store_true')
     return parser.parse_args()

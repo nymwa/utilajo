@@ -23,13 +23,17 @@ setuptools.setup(
                 'superspecimeni = utilajo.preproc.superspecimeni:main',
                 'tondi = utilajo.preproc.tondi:main',
                 'ambitondi = utilajo.preproc.ambitondi:main',
-                'preproc-iwslt = utilajo.preproc.iwslt:main',
                 'purigi = utilajo.preproc.purigi:main',
                 'malgrandigi = utilajo.preproc.malgrandigi:main',
-                'preproc-tatoeba = utilajo.preproc.tatoeba:main',
                 'senliterigi = utilajo.preproc.senliterigi:main',
                 'ambisenliterigi = utilajo.preproc.ambisenliterigi:main',
                 'vicigi = utilajo.preproc.vicigi:main',
+
+                # preprocess wmt
+                'preproc-iwslt = utilajo.preproc.wmt.iwslt:main',
+                'preproc-tatoeba = utilajo.preproc.wmt.tatoeba:main',
+                'preproc-europarl = utilajo.preproc.wmt.europarl:main',
+                'preproc-rapid = utilajo.preproc.wmt.rapid:main',
 
                 # preprocess de
                 'beta-to-eszett = utilajo.preproc.de.beta_to_eszett:main',

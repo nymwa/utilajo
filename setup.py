@@ -27,6 +27,7 @@ setuptools.setup(
                 'malgrandigi = utilajo.preproc.malgrandigi:main',
                 'senliterigi = utilajo.preproc.senliterigi:main',
                 'ambisenliterigi = utilajo.preproc.ambisenliterigi:main',
+                'miksi = utilajo.preproc.miksi:main',
                 'vicigi = utilajo.preproc.vicigi:main',
 
                 # preprocess wmt

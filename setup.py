@@ -58,6 +58,7 @@ setuptools.setup(
                 'nltk-detokenize = utilajo.postproc.nltk_detokenize:main',
                 'trunki = utilajo.postproc.trunki:main',
                 'remove-space = utilajo.postproc.remove_space:main',
+                'laulonge = utilajo.postproc.laulonge:main',
 
                 # erg
                 'target-jsonize = utilajo.erg.target_jsonize:main',

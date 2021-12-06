@@ -14,6 +14,10 @@ setuptools.setup(
             'console_scripts':[
                 'progress = utilajo.progress:main',
 
+                # filter
+                'punct-end = utilajo.filter.punct_end:main',
+                'clean-ctrl = utilajo.filter.clean_ctrl:main',
+
                 # preprocess
                 'glui = utilajo.preproc.glui:main',
                 'remove-identical = utilajo.preproc.remove_identical:remove_identical',
@@ -29,6 +33,7 @@ setuptools.setup(
                 'ambisenliterigi = utilajo.preproc.ambisenliterigi:main',
                 'miksi = utilajo.preproc.miksi:main',
                 'vicigi = utilajo.preproc.vicigi:main',
+                'unuvicigi = utilajo.preproc.unuvicigi:main',
 
                 # preprocess wmt
                 'preproc-iwslt = utilajo.preproc.wmt.iwslt:main',

@@ -28,7 +28,7 @@ def detect(model_path, k=1, p=None, lang='en', rev=False):
     for line in sys.stdin:
         line = line.strip()
         lang_labels, probs = model.predict(line, k=k)
-        printer(x, lang_labels, probs)
+        printer(line, lang_labels, probs)
 
 
 def parse_args():

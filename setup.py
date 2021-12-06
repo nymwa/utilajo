@@ -73,8 +73,8 @@ setuptools.setup(
                 'detekti = utilajo.fasttext.detekti:main',
 
                 # m2
-                'm22src = utilajo.m22src:m2_to_src',
-                'm22trg = utilajo.m22trg:m2_to_trg',
+                'm22src = utilajo.m2.m22src:m2_to_src',
+                'm22trg = utilajo.m2.m22trg:m2_to_trg',
 
                 # moses
                 'krampo-grandigi = utilajo.moses.krampo:grandigi_main',

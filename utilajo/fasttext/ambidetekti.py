@@ -4,14 +4,15 @@ from fasttext import load_model
 
 def make_printer(src_label, trg_label, k, p, rev):
 
-    def k_output(src, trg, lang_labels, probs):
-        if ((src_label in src_lang) and (trg_label in trg_lang)) ^ rev:
+    def k_output(src, trg, src_lang_labels, src_probs, trg_lang_labels, trg_probs):
+        if ((src_label in src_lang_labels) and (trg_label in trg_lang_labels)) ^ rev:
             print('{}\t{}'.format(src, trg))
 
-    def p_output(src, trg, lang_labels, probs):
-        if ((((src_label == src_lang[0])
-            and (trg_label == trg_lang[0]))
-            and (probs[0] >= p))
+    def p_output(src, trg, src_lang_labels, src_probs, trg_lang_labels, trg_probs):
+        if ((((src_label == src_lang_labels[0])
+            and (trg_label == trg_lang_labels[0]))
+            and (src_probs[0] >= p)
+            and (trg_probs[0] >= p))
             ^ rev):
             print('{}\t{}'.format(src, trg))
 
@@ -32,9 +33,11 @@ def detect(model_path, src_lang, trg_lang, k=1, p=None, rev=False):
     for line in sys.stdin:
         line = line.rstrip('\n')
         src, trg = line.split('\t')
-        src_lang = model.predict(src, k=k)[0]
-        trg_lang = model.predict(trg, k=k)[0]
-        printer(src, trg, lang_labels, probs)
+        src_lang_labels, src_probs = model.predict(src, k=k)
+        trg_lang_labels, trg_probs = model.predict(trg, k=k)
+        printer(src, trg,
+                src_lang_labels, src_probs,
+                trg_lang_labels, trg_probs)
 
 
 def parse_args():

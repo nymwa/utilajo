@@ -1,4 +1,5 @@
 import sys
+from collections import defaultdict
 from utilajo.util.template import make_main
 
 class Line:
@@ -28,12 +29,19 @@ class Line:
 
 
 def vicigi():
-    xs = [line.rstrip('\n').split('\t')
-            for line in sys.stdin]
-    xs = [Line(x) for x in xs]
-    xs.sort()
-    for x in xs:
-        print(str(x))
+    dct = defaultdict(list)
+
+    for line in sys.stdin:
+        line = Line(line.rstrip('\n').split('\t'))
+        dct[line.lens[0]].append(line)
+
+    indices = list(dct.keys())
+    indices.sort()
+
+    for index in indices:
+        dct[index].sort()
+        for line in dct[index]:
+            print(str(line))
 
 
 main = make_main(vicigi)

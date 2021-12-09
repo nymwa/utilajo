@@ -1,11 +1,22 @@
 import sys
 import numpy as np
+from argparse import ArgumentParser
 from collections import defaultdict
 
+def parse_args():
+    parser = ArgumentParser()
+    parser.add_argument('-c', action = 'store_true')
+    return parser.parse_args()
+
 def main():
+    args = parse_args()
+
     len_list = []
     for line in sys.stdin:
-        length = len(line.strip().split())
+        if args.c:
+            length = len(line.strip())
+        else:
+            length = len(line.strip().split())
         len_list.append(length)
     len_array = np.array(len_list)
 

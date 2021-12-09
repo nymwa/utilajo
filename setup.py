@@ -26,7 +26,9 @@ setuptools.setup(
                 'unicode-normalize = utilajo.preproc.unicode_normalize:main',
                 'superspecimeni = utilajo.preproc.superspecimeni:main',
                 'tondi = utilajo.preproc.tondi:main',
+                'chartondi = utilajo.preproc.chartondi:main',
                 'ambitondi = utilajo.preproc.ambitondi:main',
+                'ambichartondi = utilajo.preproc.ambichartondi:main',
                 'purigi = utilajo.preproc.purigi:main',
                 'malgrandigi = utilajo.preproc.malgrandigi:main',
                 'senliterigi = utilajo.preproc.senliterigi:main',
@@ -34,12 +36,14 @@ setuptools.setup(
                 'miksi = utilajo.preproc.miksi:main',
                 'vicigi = utilajo.preproc.vicigi:main',
                 'unuvicigi = utilajo.preproc.unuvicigi:main',
+                'forripeti = utilajo.preproc.forripeti:main',
 
                 # preprocess wmt
                 'preproc-iwslt = utilajo.preproc.wmt.iwslt:main',
                 'preproc-tatoeba = utilajo.preproc.wmt.tatoeba:main',
                 'preproc-europarl = utilajo.preproc.wmt.europarl:main',
                 'preproc-rapid = utilajo.preproc.wmt.rapid:main',
+                'preproc-bicleaner = utilajo.preproc.wmt.bicleaner:main',
 
                 # preprocess de
                 'beta-to-eszett = utilajo.preproc.de.beta_to_eszett:main',

@@ -14,8 +14,11 @@ class Data:
         self.dct[index]['source'] = reverse_text(text)
 
     def add_hypothesis(self, index, score, text):
-        self.dct[index]['score'] = score
+        # self.dct[index]['score'] = score # <- not used
         self.dct[index]['hypothesis'] = reverse_text(text)
+
+    def add_normalized_score(self, index, score):
+        self.dct[index]['normalized_score'] = score
 
     def show(self):
         lst = [(key, value) for key, value in self.dct.items()]
@@ -23,9 +26,11 @@ class Data:
 
         for key, value in lst:
             source = value['source']
-            score = value['score']
+            # score = value['score']
+            normalized_score = value['normalized_score']
             hypothesis = value['hypothesis']
-            print('{}\t{}\t{}'.format(score, source, hypothesis))
+            # print('{}\t{}\t{}'.format(score, source, hypothesis))
+            print('{}\t{}\t{}'.format(normalized_score, source, hypothesis))
 
 
 def get_source(x):
@@ -43,6 +48,13 @@ def get_hypothesis(x):
     return index, score, text
 
 
+def get_normalized_score(x):
+    x = x.split('\t')
+    index = int(x[0].split('-')[1])
+    score = float(x[1])
+    return index, score
+
+
 def main():
     data = Data()
 
@@ -53,6 +65,9 @@ def main():
         elif x.startswith('H'):
             index, score, text = get_hypothesis(x)
             data.add_hypothesis(index, score, text)
+        elif x.startswith('N'):
+            index, score = get_normalized_score(x)
+            data.add_normalized_score(index, score)
 
     data.show()
 

@@ -63,6 +63,7 @@ setuptools.setup(
                 'indeksi = utilajo.postproc.indeksi:main',
                 'hazardi = utilajo.postproc.hazardi:main',
                 'kunigi = utilajo.postproc.kunigi:main',
+                'kunigi2 = utilajo.postproc.kunigi2:main',
                 'kuntrunki = utilajo.postproc.kuntrunki:main',
                 'nltk-detokenize = utilajo.postproc.nltk_detokenize:main',
                 'trunki = utilajo.postproc.trunki:main',

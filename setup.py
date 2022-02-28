@@ -69,6 +69,7 @@ setuptools.setup(
                 'trunki = utilajo.postproc.trunki:main',
                 'remove-space = utilajo.postproc.remove_space:main',
                 'laulonge = utilajo.postproc.laulonge:main',
+                'selekti = utilajo.postproc.selekti:main',
 
                 # erg
                 'target-jsonize = utilajo.erg.target_jsonize:main',

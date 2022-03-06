@@ -85,6 +85,7 @@ setuptools.setup(
                 # moses
                 'krampo-grandigi = utilajo.moses.krampo:grandigi_main',
                 'krampo-malgrandigi = utilajo.moses.krampo:malgrandigi_main',
+                'krampo-deigi = utilajo.moses.deigi:deigi_main',
 
                 # compare-fairseq-vocab
                 'compare-vocab = utilajo.compare_fairseq_vocab:main',

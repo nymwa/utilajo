@@ -70,6 +70,7 @@ setuptools.setup(
                 'remove-space = utilajo.postproc.remove_space:main',
                 'laulonge = utilajo.postproc.laulonge:main',
                 'selekti = utilajo.postproc.selekti:main',
+                'langhazardi = utilajo.postproc.langhazardi:main',
 
                 # erg
                 'target-jsonize = utilajo.erg.target_jsonize:main',

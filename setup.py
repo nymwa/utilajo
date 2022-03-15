@@ -64,11 +64,13 @@ setuptools.setup(
                 'hazardi = utilajo.postproc.hazardi:main',
                 'kunigi = utilajo.postproc.kunigi:main',
                 'kunigi2 = utilajo.postproc.kunigi2:main',
+                'kunigi3 = utilajo.postproc.kunigi3:main',
                 'kuntrunki = utilajo.postproc.kuntrunki:main',
                 'nltk-detokenize = utilajo.postproc.nltk_detokenize:main',
                 'trunki = utilajo.postproc.trunki:main',
                 'remove-space = utilajo.postproc.remove_space:main',
                 'laulonge = utilajo.postproc.laulonge:main',
+                'laulonge2 = utilajo.postproc.laulonge2:main',
                 'selekti = utilajo.postproc.selekti:main',
                 'langhazardi = utilajo.postproc.langhazardi:main',
 
